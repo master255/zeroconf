@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net"
 
+	"github.com/wlynxg/anet"
 	"golang.org/x/net/ipv4"
 	"golang.org/x/net/ipv6"
 )
@@ -102,7 +103,7 @@ func joinUdp4Multicast(interfaces []net.Interface) (*ipv4.PacketConn, error) {
 
 func listMulticastInterfaces() []net.Interface {
 	var interfaces []net.Interface
-	ifaces, err := net.Interfaces()
+	ifaces, err := anet.Interfaces()
 	if err != nil {
 		return nil
 	}
